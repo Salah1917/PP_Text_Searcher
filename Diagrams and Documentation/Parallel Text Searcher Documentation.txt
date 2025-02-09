@@ -1,0 +1,66 @@
+Parallel Keyword Search Tool
+
+Introduction
+This project aims to efficiently search for a specific keyword across multiple text files using parallel processing.
+By leveraging multithreading, the system will assign a separate thread to each file, allowing for simultaneous searches and significantly reducing the time required to locate occurrences of the keyword.
+
+Objective
+The main objective of this project is to speed up keyword searches within multiple text documents by distributing the workload across multiple threads.
+This approach enhances performance and reduces the search time, making it suitable for handling large datasets.
+
+Scope
+This documentation covers the following key aspects:
+
+Scanning multiple text files in parallel for a given keyword.
+
+Assigning a separate thread to process each document independently.
+
+Collecting and summarizing the results from all threads into a final output.
+
+Ensuring efficient processing and scalability to handle larger file sets.
+
+Each file is processed by an independent thread that searches for the keyword and records relevant details, such as the number of occurrences and their positions within the file.
+
+Once all threads complete their searches, the results are merged and displayed in a concise summary.
+
+System Architecture
+The system will consist of the following components:
+
+File Loader: Reads and loads multiple text documents from a specified directory.
+
+Thread Pool: Manages multiple threads, with each thread processing a single file.
+
+Search Executor: Each thread executes a keyword search within its assigned file, recording occurrences.
+
+Result Aggregator: Combines search results from all threads and generates a final summary.
+
+Components
+
+File Handler: Reads multiple text files and prepares them for processing.
+
+Thread Manager: Initializes and manages threads, ensuring each file is assigned to a separate thread.
+
+Search Task: Executes keyword searches within a file and records the results.
+
+Result Compiler: Aggregates keyword occurrences from all threads and presents a summarized output.
+
+Key Features
+
+Parallel Processing: Each file is searched independently using a dedicated thread, reducing the overall search time.
+
+Scalability: The tool can dynamically adjust the number of threads based on the number of files and system resources.
+
+Efficiency: Distributed processing ensures optimal utilization of computing power, making searches significantly faster for large datasets.
+
+Summary Generation: Results from all files are compiled into a structured summary, showing keyword occurrences and frequencies across documents.
+
+Testing
+The system should be tested with various datasets to validate performance and accuracy. Key test cases include:
+
+Small text files (to test basic functionality).
+
+Large text files (to assess performance improvements with parallel processing).
+
+Different keyword search scenarios (e.g., common words, rare words, misspelled words).
+
+This tool aims to provide a robust and efficient solution for searching keywords across multiple documents quickly and effectively, utilizing the power of parallel processing.
